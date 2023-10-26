@@ -1,8 +1,11 @@
 import { Stack } from "expo-router";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import ScreenHeaderBtn from "/Users/rishabhraghav/Desktop/projects/reactNative/jobPortal/components/common/header/ScreenHeaderBtn.jsx";
+import Welcome from "../components/home/welcome/Welcome";
+import Popularjobs from "../components/home/popular/Popularjobs";
+import Nearbyjobs from "../components/home/nearby/Nearbyjobs";
 
-import { COLORS, icons, images } from "../constants";
+import { COLORS, SIZES, icons, images } from "../constants";
 
 const Home = () => {
     return (
@@ -22,6 +25,13 @@ const Home = () => {
             ),
             headerTitle: ""
         }}/>
+        <ScrollView>
+            <View style={{flex: 1, padding: SIZES.medium}}>
+                <Welcome />
+                <Popularjobs />
+                <Nearbyjobs />
+            </View>
+        </ScrollView>
     </SafeAreaView>
     )
 }
